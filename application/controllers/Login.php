@@ -16,11 +16,11 @@ class Login extends CI_Controller
  
   function autenticar() 
   {
-		$this->load->model("usuarios_model");
+	
 		$email = $this->input->post('email');
 		
 		/* abaixo fazer a criptografia da senha da maneira mais atual (password_hash) **/
-		$senha = md5($this->input->post('senha'));
+		$senha = md5($this->input->post('password'));
 		
 		/* variavel que armazena a função de validação da model login **/
 		$validacao = $this->login_model->validacao($email,$senha);
@@ -34,11 +34,12 @@ class Login extends CI_Controller
 			$email = $data['user_email'];
 			$level = $data['user_level'];
 
-			/* ???? variavel que armazena todos os dados do usuário **/
+			/* variavel que armazena todos os dados do usuário **/
 			$sesdata = array(
 				'username' => $nome,
 				'email' => $email,
-				'level' => TRUE
+				'level' => $level,
+				'logged_in' => TRUE
 			);
 
 			$this->session->set_userdata($sesdata);
@@ -75,5 +76,7 @@ class Login extends CI_Controller
   }
 
 }
+
+
 
 

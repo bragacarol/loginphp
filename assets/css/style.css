@@ -1,0 +1,28 @@
+.container
+{
+	background-color: 	lightblue;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.central
+{
+	background-color: lightcoral;
+	height: 300px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.buttonstyle
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
